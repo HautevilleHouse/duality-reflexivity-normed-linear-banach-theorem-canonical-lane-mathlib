@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DualityReflexivityNormedLinearBanachTheoremCanonicalLaneLean.BanachSpaceDuality
+import HautevilleHouse.DualityReflexivityNormedLinearBanachTheoremCanonicalLaneLean.ReflexivityBidual
+import HautevilleHouse.DualityReflexivityNormedLinearBanachTheoremCanonicalLaneLean.BanachAlaogluTheorem
+
+namespace HautevilleHouse
+namespace DualityReflexivityNormedLinearBanachTheoremCanonicalLaneLean
+
+def ConstrainedDualityReflexivityClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_duality_reflexivity_endgame (A : AdmissibleClass) : ConstrainedDualityReflexivityClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DualityReflexivityNormedLinearBanachTheoremCanonicalLaneLean
+end HautevilleHouse
